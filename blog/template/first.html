@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            font-size: 1.5em;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 1em;
+        }
+
+        article {
+            background-color: #07e9fe; /* Pleasant yellow color, feel free to change */
+            margin: 1em;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(251, 251, 251, 0.1);
+            width: 30%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        article.hovered {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #000406;
+        }
+
+        p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Velammal College of Engineering and Technology</h1>
+    </header>
+
+    <section>
+        <article id="post1">
+            <h2>Regulation R-2021</h2>
+            <p></p>
+        </article>
+
+        <article id="post2">
+            <h2>Curriculam R-2021</h2>
+            <p></p>
+        </article>
+
+        <article id="post3">
+            <h2>Syllabus R-2021 </h2>
+            <p></p>
+        </article>
+    </section>
+
+    <footer>
+       Department of Computer Science and Engineering
+    </footer>
+
+    <script>
+        const articles = document.querySelectorAll('article');
+
+        function rotateHover() {
+            let currentIndex = 0;
+
+            setInterval(() => {
+                articles.forEach((article, index) => {
+                    if (index === currentIndex) {
+                        article.classList.add('hovered');
+                    } else {
+                        article.classList.remove('hovered');
+                    }
+                });
+
+                currentIndex = (currentIndex + 1) % articles.length;
+            }, 1000);
+        }
+
+        rotateHover();
+    </script>
+</body>
+
+</html>
